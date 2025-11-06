@@ -1,0 +1,95 @@
+{% extends 'interface/base.html' %}
+{% load static %}
+
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+</head>
+
+{% block content %} 
+<body>
+    <div class="main-content" style="font-family: Arial">
+            <ul class="list-group">
+                <li class="list-group-item header">
+                    <span>Nome</span>
+                    <span>Matrícula</span>
+                </li>
+
+                {% for aluno in alunos %}
+                
+                <a href="{% url 'aluno_detail' aluno.pk %}" class="list-group-item item"> <!--{% if forloop.first %}active{% endif %}-->
+                    <span class="fw-bold">{{ aluno.nome }}</span>
+                    <span class="fw-bold">{{ aluno.matricula }}</span>
+                </a>
+                {% empty %}
+                <li class="list-group-item item">
+                    <span>Nenhum aluno encontrado.</span>
+                </li>
+                {% endfor %}
+            </ul>
+    </div>
+</body>    
+
+{% if is_paginated %}  <nav aria-label="Navegação da página de alunos">
+    
+    <ul class="pagination justify-content-center mt-4"> 
+
+        {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page=1" aria-label="Primeira">&lsaquo;&lsaquo;&lsaquo;</a>
+            </li>
+        {% endif %}
+
+        {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Anterior">&lsaquo;</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">&lsaquo;</span>
+            </li>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+            {% if num == page_obj.number %}
+                <li class="page-item active" aria-current="page">
+                    <span class="page-link">{{ num }}</span>
+                </li>
+            {% else %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Próximo">&rsaquo;</a>
+            </li>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}" aria-label="Última">&rsaquo;&rsaquo;&rsaquo;</a>
+            </li>
+        {% else %}
+            <li class="page-item disabled">
+                <span class="page-link">&rsaquo;&rsaquo;&rsaquo;</span>
+            </li>
+        {% endif %}
+
+    </ul>
+</nav>
+{% endif %}
+    <!--<div>
+        <ul class="pagination justify-content-center mt-4">
+                <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">Próxima</a></li>
+            </ul>
+    </div>-->
+
+{% endblock content %}
+
+</html>

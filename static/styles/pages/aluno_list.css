@@ -1,0 +1,61 @@
+.main-content {
+    flex-grow: 1;
+    padding: 0 0 20px;
+}
+
+.list-group-item {
+    background-color: white; /* Simplificado de #ffffffff */
+    color: var(--roxo-escuro-pri);
+    border: none;
+    margin-bottom: 5px;
+    border-radius: 25px;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, color 0.3s; /* Adicionado para suavizar o hover */
+}
+
+.list-group-item.header {
+    background-color: transparent;
+    font-weight: bold;
+    color: white; /* Simplificado de #ffffffff */
+}
+
+/* Movemos o cursor:pointer para cá */
+.list-group-item.item {
+    cursor: pointer;
+}
+
+/* Unificamos os estilos de item ativo e hover e corrigimos o nome da classe para .active */
+.list-group-item.item.active,
+.list-group-item.item:hover {
+    background-color: var(--roxo-claro-principal);
+    color: white;
+}
+
+
+
+.pagination .page-link{
+    color: black;
+}
+.pagination .page-link:hover {
+    background-color: var(--roxo-claro-principal);
+    color: #FFFFFF; /* Texto branco puro */
+    border-color: var(--roxo-claro-principal);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--roxo-claro-principal);
+    color: #FFFFFF;
+    border-color: var(--roxo-claro-principal);
+}
+
+/* 4. Estilo dos links DESABILITADOS (ex: "Anterior" na pág 1)
+   Usamos um fundo mais "morto" e texto cinza.
+*/
+.pagination .page-item.disabled .page-link {
+    background-color: var(--roxo-escuro-sec); /* Um cinza bem escuro (ajuste se precisar) */
+    color: rgb(154, 154, 154); /* Cor do texto "desabilitado" */
+    border-color: var(--roxo-escuro-sec);
+}

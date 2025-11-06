@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>base</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles\main.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+<!-- ABAIXO FICA A NAVBAR -->
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark navbar-principal">
+
+<div class="container">
+    <a class="navbar-brand me-5" href="#"><strong>DashBoard</strong></a>
+
+    <!-- Botão que esconde o menu quando a tela fica pequena: -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- PARTE DOS LINKS: -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Início</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Alunos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Turmas</a>
+        </li>
+        
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cursos
+            </a>
+            <!-- MENU DE OPÇÕES DENTRO DE UMA OPÇÕES: -->
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Edificações</a></li>
+                <li><a class="dropdown-item" href="#">Eletrotécnica</a></li>
+                <li><a class="dropdown-item" href="#">Informática</a></li>
+                <li><a class="dropdown-item" href="#">Segurança do trabalho</a></li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mais opções
+            </a>
+            <!-- MENU DE OPÇÕES DENTRO DE UMA OPÇÕES: -->
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">em desenvolvimento...</a></li>
+                <li><a class="dropdown-item" href="#">em desenvolvimento...</a></li>
+                <li><a class="dropdown-item" href="#">em desenvolvimento...</a></li>
+            </ul>
+        </li>
+        </ul>
+        <!-- BOTOES-ICONES  -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link" href="#" title="Informações"><i class="bi bi-info-circle fs-5" ></i>
+            <small class="d-lg-none ms-2">Informações</small></a></a>
+        </li>
+        <li class="py-2 py-lg-1 col-12 col-lg-auto">
+            <div class="vr d-none d-lg-flex h-100 mx-lg-2 text-white"></div>
+            <hr class="d-lg-none my-2 text-white-50">
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" title="GitHub"><i class="bi bi-github fs-5"></i>
+            <small class="d-lg-none ms-2">GitHub</small></a>
+        </li>
+        </ul>
+    </div>
+
+</div></nav></header>
+<!-- NAVBAR ACABA AQUI -->
+
+<!-- ABAIXO FICA O CONTEUDO DO SITE -->
+<main class="container text-white mt-4 flex-grow-1">
+    <h1>Página Principal</h1>
+    <p>complicade.</p>
+</main>
+<!-- O CONTEUDO ACABA AQUI -->
+
+<!-- ABAIXO FICA O FOOTER -->
+<footer class="py-5 text-center footer-principal">
+    <span class="text-white">&copy; 2025 - Lorem ipsum dolor sit amet consectetur</span>
+</footer>
+<!-- FOOTER ACABA AQUI -->
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</html>

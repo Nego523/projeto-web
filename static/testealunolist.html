@@ -1,0 +1,30 @@
+{% extends 'interface/base.html' %} 
+
+{% block title %}Lista de Turmas{% endblock title %}
+
+{% block content %} 
+
+<h1>Alunos</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">NOME</th>
+      <th scope="col">MATRÍCULA</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in object_list %}
+    <tr class="">
+        <td>{{i.nome}}</td>
+        <td>{{i.matricula}}</td>
+    </tr>
+    {% empty %}
+    <p>nada aqui</p>
+    {% endfor%}
+  </tbody>
+</table>
+
+
+
+{% endblock content %}

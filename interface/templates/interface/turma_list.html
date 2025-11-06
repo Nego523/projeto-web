@@ -1,0 +1,21 @@
+{% extends 'interface/base.html' %} 
+
+{% block title %}Turma{% endblock title %}
+
+{% block content %} 
+
+<h1>Turma</h1>
+
+{% for turma in turmas %}
+    <a href="{% url 'turma_detail' turma.pk  turma.ano%}" class="list-group-item item">
+        <span class="fw-bold">{{ turma.id }}</span>
+        <span class="fw-bold">{{ turma.ano }}</span>
+    </a>
+    {% empty %}
+        <li class="list-group-item item">
+            <span>Nada encontrado.</span>
+        </li>
+
+{% endfor%}
+
+{% endblock content %}

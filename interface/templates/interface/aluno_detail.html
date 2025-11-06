@@ -1,0 +1,25 @@
+{% extends 'interface/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="main-content" style="font-family: Arial">
+    {% if aluno %}
+    <div>
+        <div class="img"><img src="{% static 'assets/images/sem-perfil-icon.png' %}" style="width: 15%;" alt=""></div>
+        <div>
+            <div><h1>{{ aluno.nome }}</h1></div>
+            <div>
+                <span><strong>Matrícula:</strong> {{ aluno.matricula }}</span>
+                <span><strong>Turma: 523</strong></span>
+            </div>
+        </div>
+    </div>
+        
+        {% else %}
+        <p>Aluno não encontrado.</p>
+    {% endif %}
+
+    <br>
+    <a href="{% url 'aluno_list' %}">Voltar para a lista de alunos</a>
+</div>
+{% endblock content %}

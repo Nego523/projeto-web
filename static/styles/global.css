@@ -1,0 +1,11 @@
+:root{
+    --roxo-escuro-pri: #110d23;
+    --roxo-escuro-sec: #1c1730;
+    --roxo-claro-principal: #6924f1;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: var(--roxo-escuro-pri);
+}

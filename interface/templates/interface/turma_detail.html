@@ -1,0 +1,15 @@
+{% extends 'interface/base.html' %} 
+
+{% block content %} 
+{%if turma%}
+        <span class="fw-bold">{{ turma.ano }}</span>
+        <span class="fw-bold">{{ turma.descricao }}</span>
+        <span class="fw-bold">{{ turma.curso }}</span>
+        <span class="fw-bold">{{ turma.serie }}</span>
+        <span class="fw-bold">{{ turma.turno }}</span>
+{%else%}
+    <h1>nada</h1>
+{%endif%}
+
+
+{% endblock content %}

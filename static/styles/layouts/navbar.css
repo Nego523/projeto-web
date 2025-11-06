@@ -1,0 +1,26 @@
+/* modifica o navbar */
+.navbar-principal {
+    background-color: var(--roxo-claro-principal);
+}
+
+/* modifica cor de fundo das opções dentro de cursos e turmas */
+.navbar-principal .dropdown-menu {
+  background-color: var(--roxo-escuro-sec);
+}
+
+/* muda a cor do texto de cada opção do dropdown */
+.navbar-principal .dropdown-menu .dropdown-item {
+  color: white;
+}
+
+/* muda cor de fundo das opções dentro de cursos e turmas ao passar o mouse ou quando tiver selecionado elo teclado */
+.navbar-principal .dropdown-menu .dropdown-item:hover,
+.navbar-principal .dropdown-menu .dropdown-item:focus {
+  background-color: var(--roxo-claro-principal);
+  color: white;
+}
+
+.dropdown-item.active, .dropdown-item:active{
+  background-color: var(--roxo-claro-principal);
+}
+

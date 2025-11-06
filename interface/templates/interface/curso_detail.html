@@ -1,0 +1,10 @@
+{% extends 'interface/base.html' %} 
+
+{% block content %} 
+{%if curso%}
+    {{curso.descricao}}
+{%else%}
+    <h1>nada</h1>
+{%endif%}
+
+{% endblock content %}

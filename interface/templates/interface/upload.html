@@ -1,0 +1,65 @@
+{% extends "interface/base.html" %}
+
+{% block content %} <div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            
+            <h2 class="mb-4">Importar Planilha de Turma</h2>
+            
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert 
+                                {% if message.tags == 'success' %}alert-success{% endif %}
+                                {% if message.tags == 'error' %}alert-danger{% endif %}
+                                alert-dismissible fade show" 
+                                role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <p class="card-text text-muted">
+                        Selecione a planilha de mapa de notas e o período que 
+                        deseja importar ou atualizar no banco de dados.
+                    </p>
+                    <hr>
+
+                    <form method="POST" enctype="multipart/form-data" novalidate>
+                        
+                        {% csrf_token %}
+                        
+                        {% for field in form %}
+                            <div class="mb-3">
+                                {{ field.label_tag }}
+                                
+                                {{ field }}
+                                
+                                {% if field.help_text %}
+                                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                                {% endif %}
+                                
+                                {% for error in field.errors %}
+                                    <div class="invalid-feedback d-block">
+                                        {{ error }}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                        
+                        <div class="d-grid gap-2 mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                Iniciar Importação
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
